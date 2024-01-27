@@ -12,7 +12,7 @@ Podemos descrever um bom código tem essas duas características:
   - Outros conseguem ler e entender seu código com facilidade?
   - O código está bem organizado, identado e com nomenclaturas fáceis de entender?
 - Escalável
- - É isso que o Big O nos ajuda a mensurar.
+	- É isso que o Big O nos ajuda a mensurar.
 
  Se pensarmos no clássico do algoritmo e pensar numa receita de bolo, certamente é possível entender que existem meios eficientes de se fazer um bolo e jeitos completamente ineficientes de se fazer um bolo (podemos até pensar em assar a massa do bolo com fósforos xD). E é utilizando o Big O que conseguiremos entender se a solução foi eficiente ou não.
 
