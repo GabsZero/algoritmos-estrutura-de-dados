@@ -229,6 +229,10 @@ Sem as constantes, esse seria o resultado:
 
 Muito mais simples, não?
 
+E tem uma outra questão também. Se n valer 10000, qual diferença adicionar + 3? ou + 50?
+
+Se n valer 100.000.000, ainda que multiplicar por 3 possa adicionar um peso, no fim do dia, é n, porque vai depender da entrada.
+
 
 
 
