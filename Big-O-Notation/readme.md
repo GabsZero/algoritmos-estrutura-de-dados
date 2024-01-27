@@ -60,9 +60,9 @@ func percorrerLista(array []int) {
  Percorrer a lista levou 137.6928ms
  ```
 
- Claro que esses valores vão mudar de acordo com as especificações do computador que estiver rodando, tal como os programas que estiverem rodando e mais alguns fatores que podem influenciar, mas percebe que quanto maior a quantidade de números, mais tempo vai levando?
+ Claro que esses valores vão mudar de acordo com as especificações do computador que estiver rodando, tal como os programas que estiverem rodando e mais alguns fatores que podem influenciar. E não se apegue muito ao tempo de execução por enquanto, isso foi apenas para ilustrar. O que vai importar mesmo é o número de operações dado uma determinada entrada de dados.
 
- Nosso ponto aqui ainda é código escalável, se eu aumento a minha quantidade e o tempo aumenta, ele é escalável? 
+ Nosso ponto aqui ainda é código escalável, se eu aumento a minha entrada, o número de operações aumenta.
 
  Podemos medir a eficiência com Big O desconsiderando as diferenças de ambiente, colocando os resultados numa escala. E a escala do Big O é essa aqui: 
  
