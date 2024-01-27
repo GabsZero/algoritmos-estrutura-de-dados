@@ -65,6 +65,7 @@ func percorrerLista(array []int) {
  Nosso ponto aqui ainda é código escalável, se eu aumento a minha quantidade e o tempo aumenta, ele é escalável? 
 
  Podemos medir a eficiência com Big O desconsiderando as diferenças de ambiente, colocando os resultados numa escala. E a escala do Big O é essa aqui: 
+ 
  ![Alt text](image.png)
 
  Pode ficar um pouco confuso no início, mas vamos falando disso aos poucos e vai fazer bastante sentido.
