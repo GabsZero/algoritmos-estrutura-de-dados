@@ -27,14 +27,14 @@ func encontraRyu(lutadores []string) {
 }
 
 func percorrerLista(array []int) {
-	inicio := time.Now()
-	for i := 0; i < len(array); i++ {
-		if array[i] > 0 {
-			fmt.Println("Número é maior que zero!")
+	inicio := time.Now()              // O(1) por ser apenas uma atribuição
+	for i := 0; i < len(array); i++ { // O(n) porque vai acontecer n vezes a partir de uma chamada da função
+		if array[i] > 0 { // O(n)
+			fmt.Println("Número é maior que zero!") // O(n)
 		}
 	}
-	tempo := time.Since(inicio)
-	log.Printf("Percorrer a lista levou %s", tempo)
+	tempo := time.Since(inicio)                     // O(1)
+	log.Printf("Percorrer a lista levou %s", tempo) // O(1)
 }
 
 func calculaPrimeiroNumero(array []int) {

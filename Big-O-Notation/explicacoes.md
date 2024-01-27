@@ -197,3 +197,38 @@ Encontrei o ryu!
 ```
 
 Note que a nossa função precisou percorrer as 10 posições do array para encontrar o ryu. Como nosso array só tem 10 posições, entendemos que esse é o nosso pior cenário. Se o ryu estivesse na primeira posição, esse é o nosso melhor cenário. Mas, o que importa para o Big O é o pior cenário. Por isso, essa solução é O(n), porque se o elemento que queremos estiver na última posição, teremos que percorrer todo o array até encontrá-lo.
+
+### Ignorar as constantes
+Quando estamos tentando calcular Big O, podemos abordar de uma maneira mais linha a linha e somarmos todos os resultados. Se abordássemos dessa forma, teríamos algo parecido com isso:
+
+```
+func percorrerLista(array []int) {
+	inicio := time.Now() // O(1) por ser apenas uma atribuição
+	for i := 0; i < len(array); i++ { // O(n) porque vai acontecer n vezes a partir de uma chamada da função
+		if array[i] > 0 { // O(n)
+			fmt.Println("Número é maior que zero!") // O(n)
+		}
+	}
+	tempo := time.Since(inicio)                     // O(1)
+	log.Printf("Percorrer a lista levou %s", tempo) // O(1)
+}
+```
+Poderíamos calcular, então, a complexidade dessa forma:
+
+`O(1 + n + n + n + 1 + 1)`
+
+Que poderia ser simplificado para
+
+`O(3 + 3n)`
+
+Mas, lembra do gráfico que demonstra as notações? Não há nada parecido com isso lá. Podemos simplificar essa exibição e remover as constantes. Quais são as constantes? Esses números definidos que utilizamos. 
+
+Sem as constantes, esse seria o resultado:
+
+`O(n)`
+
+Muito mais simples, não?
+
+
+
+
