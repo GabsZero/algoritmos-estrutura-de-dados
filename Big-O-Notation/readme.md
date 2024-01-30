@@ -234,5 +234,58 @@ E tem uma outra questão também. Se n valer 10000, qual diferença adicionar + 
 Se n valer 100.000.000, ainda que multiplicar por 3 possa adicionar um peso, no fim do dia, é n, porque vai depender da entrada.
 
 
+### Termos diferentes para inputs diferentes
 
+Essa regra pode parecer um pouco confusa no início, mas vamos direto para um exemplo:
+
+Vamos pegar o mesmo código da regra anterior, e adicionar uma regrinha a mais.
+
+```
+func percorrerLista(array []int, array2 []int) {
+	for i := 0; i < len(array); i++ { // O(n) porque vai acontecer n vezes a partir de uma chamada da função
+		if array[i] > 0 { // O(n)
+			fmt.Println("Número é maior que zero!") // O(n)
+		}
+	}
+
+	
+	for i := 0; i < len(array2); i++ { 	
+			fmt.Println(array2[i]) 
+	}
+}
+```
+> A partir de agora não vamos mais nos atentar ao tempo, Big O mensura a escalabilidade, quanto mais nossa entrada cresce, o quanto nossa eficiência diminui ou permanece a mesma.
+
+Repare que no código, agora, recebemos dois parâmetros diferentes. E apenas para título de demonstração, estamos percorrendo o segundo array e exibindo os valores dentro dele.
+
+Ora, seguindo a lógica anterior, aqui ainda teremos um O(n), não?
+
+Bem, não exatamente.
+
+A regra diz "diferentes termos para diferentes inputs", o primeiro parâmetro e o segundo parâmetro são duas entradas diferentes. Nesse caso, representamos esse algoritmo dessa forma: `O(a + b)`.
+
+> Desde o início, estamos usando "n" como um determinado valor ou conjunto de valores, mas "n" é um valor arbitrário, poderíamos escrever O(x), O(y), etc. 
+
+Escrevemos dessa forma porque os valores de "a" e "b" podem ser diferentes, logo um "2n" não representaria corretamente o cenário.
+
+Mas, e se os loops estivessem aninhados?
+```
+func logParesDoArray(array []int) {
+	for i := 0; i < len(array); i++ {
+		for j := 0; j < len(array); j++ {
+			fmt.Printf("%d %d\n", array[i], array[j])
+		}
+	}
+}
+```
+
+Repare que agora, o segundo for está dentro do primeiro. Qual será o Big O disso?
+Nesses casos, ao invés de usar a adição para representar o Big O, usaremos a multiplicação. O Big O desse código seria então: `O(n^2)`. 
+
+Se voltarmos ao nosso gráfico, podemos ver que essa notação é, na verdade, terrível. Olha em como a linha vai quase reta pra cima!
+ ![Alt text](image.png)
+
+No exemplo anterior, do nosso `O(a + b)`, se os dois inputs estivessem aninhados, usaríamos `O(a * b)`. A regra de dedão é:
+- Se está sequencial, um após o outro, é soma.
+- Se está aninhado, um dentro do outro, multiplicamos.
 
