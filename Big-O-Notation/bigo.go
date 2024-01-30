@@ -10,10 +10,11 @@ import (
 func main() {
 	rand.Seed(time.Now().Unix())
 	// listaAleatoria := rand.Perm(100000)
-	lutadores := []string{"ken", "chunli", "blanka", "sagat", "bison", "vega", "balrog", "dhalsin", "akuma", "ryu"}
+	// lutadores := []string{"ken", "chunli", "blanka", "sagat", "bison", "vega", "balrog", "dhalsin", "akuma", "ryu"}
 	// percorrerLista(listaAleatoria)
 	// calculaPrimeiroNumero(listaAleatoria)
-	encontraRyu(lutadores)
+	// encontraRyu(lutadores)
+	logParesDoArray([]int{1, 2, 3, 4, 5})
 }
 
 func encontraRyu(lutadores []string) {
@@ -22,6 +23,14 @@ func encontraRyu(lutadores []string) {
 		if lutador == "ryu" {
 			fmt.Println("Encontrei o ryu!")
 			break
+		}
+	}
+}
+
+func logParesDoArray(array []int) {
+	for i := 0; i < len(array); i++ {
+		for j := 0; j < len(array); j++ {
+			fmt.Printf("%d %d\n", array[i], array[j])
 		}
 	}
 }
