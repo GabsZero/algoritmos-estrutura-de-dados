@@ -14,7 +14,8 @@ func main() {
 	// percorrerLista(listaAleatoria)
 	// calculaPrimeiroNumero(listaAleatoria)
 	// encontraRyu(lutadores)
-	logParesDoArray([]int{1, 2, 3, 4, 5})
+	// logParesDoArray([]int{1, 2, 3, 4, 5})
+	somarTodosOsPares([]int{1, 2, 3, 4, 5})
 }
 
 func encontraRyu(lutadores []string) {
@@ -23,6 +24,20 @@ func encontraRyu(lutadores []string) {
 		if lutador == "ryu" {
 			fmt.Println("Encontrei o ryu!")
 			break
+		}
+	}
+}
+
+func somarTodosOsPares(array []int) {
+	fmt.Println("Esses são os números")
+	for _, numero := range array {
+		fmt.Println(numero)
+	}
+
+	fmt.Println("Essas são as somas dos pares")
+	for _, primeiroNumero := range array {
+		for _, segundoNumero := range array {
+			fmt.Println(primeiroNumero + segundoNumero)
 		}
 	}
 }
