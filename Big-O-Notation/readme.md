@@ -289,3 +289,37 @@ No exemplo anterior, do nosso `O(a + b)`, se os dois inputs estivessem aninhados
 - Se está sequencial, um após o outro, é soma.
 - Se está aninhado, um dentro do outro, multiplicamos.
 
+### Ignorar as constantes não dominantes
+
+Vamos considerar o seguinte código
+```
+func somarTodosOsPares(array []int) {
+	fmt.Println("Esses são os números")
+	for _, numero := range array {
+		fmt.Println(numero)
+	}
+
+	fmt.Println("Essas são as somas dos pares")
+	for _, primeiroNumero := range array {
+		for _, segundoNumero := range array {
+			fmt.Println(primeiroNumero + segundoNumero)
+		}
+	}
+}
+```
+
+O que ele faz é apenas exibir os números que chegaram no input e somar todos os pares. Similar a um exemplo anterior, mas dessa vez, ao invés de exibir, estamos somando os pares.
+
+Qual seria o Big O desse código?
+
+Podemos pensar na soma dos elementos, temos um loop, depois temos mais um loop com outro loop dentro dele ou `O(n + n^2)`, certo?
+
+Mas, a regra nos diz para ignorar as constantes não dominantes. Isso significa que vamos nos importar apenas com a parte mais importante, que é `n^2`. 
+
+Por que ela é a parte dominante?
+
+Falando muito rapidamente de matemática, vamos imaginar que n = 5, nosso Big O seria assim `O(5 + 5^2)`. 5^2 = 25, logo é a parte dominante. 
+
+O Big O desse código, seria então, `O(n^2)`.
+
+> Para cada loop aninhado, aumentamos o expoente. 3 loops aninhados seria n^3 e por ai vai. Mas esse comportamento é altamente desencorajado, porque se n^2 já escala mal, imagina coisas maiores
