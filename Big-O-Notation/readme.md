@@ -323,3 +323,18 @@ Falando muito rapidamente de matemática, vamos imaginar que n = 5, nosso Big O 
 O Big O desse código, seria então, `O(n^2)`.
 
 > Para cada loop aninhado, aumentamos o expoente. 3 loops aninhados seria n^3 e por ai vai. Mas esse comportamento é altamente desencorajado, porque se n^2 já escala mal, imagina coisas maiores
+
+## Qual código é melhor?
+Quando falamos de qualidade de código, estamos falando de 3 pilares essenciais:
+- O código é legível (readable)
+- Ele roda rápido (time complexity)
+- Ele ocupa pouco espaço na memória (space complexity)
+
+É comum precisarmos sacrificar mais memória para rodar um código mais rápido, ou usar menos memória,mas a execução levará mais tempo.
+
+Vamos começar a falar um pouco da complexidade de espaço. Quando um programa roda, ele tem dois meios de "lembrar" das coisas:
+- Memory heap
+	- é onde normalmente ficam armazenadas as variáveis
+- Memory stack
+	- é onde normalmente ficam armazenadas as chamadas de funções
+
